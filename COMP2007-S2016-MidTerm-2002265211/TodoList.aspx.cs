@@ -192,5 +192,23 @@ namespace COMP2007_S2016_MidTerm_2002265211
         {
 
         }
+
+        protected void TodoGridView_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+
+                // Get the number of items in the Rows collection.
+                int count = TodoGridView.Rows.Count;
+
+                // If the GridView control contains any records, display 
+                // the last name of each author in the GridView control.
+                if (count > 0)
+                {
+                    TodoTotal.Text = count.ToString();
+                }
+
+            }
+        }
     }
 }
